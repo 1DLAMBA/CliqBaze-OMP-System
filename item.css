@@ -1,0 +1,61 @@
+.ovr{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.in-1 img{
+    width: 900px;
+    padding:2%;
+    
+}
+.in-2{
+    background-color: white;
+    width:46%;
+    padding: 10px;
+}
+
+.in-2 h1{
+    font-size: 70px;
+}
+
+.in-2 h4{
+    font-size: 40px;
+}
+
+.in-2 p{
+    font-size: 20px;
+}
+
+.in-2 button{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 50px;
+    padding-right: 50px;
+    border: 3px solid;
+    background-color: transparent;
+    font-size: 17px;
+}
+
+.in-2 button:hover{
+    background-color: white;
+    
+    border:solid red;
+    border-radius:10px;
+    transition: 0.1s;
+}
+
+
+@media only screen and (max-width: 768px){
+    .in-2{
+        background-color: white;
+        width:100%;
+        padding: 10px;
+    }
+
+    .in-1 img{
+        width: 320px;
+        padding:2%;
+        
+    }
+
+}
