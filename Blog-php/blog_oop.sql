@@ -200,10 +200,10 @@ INSERT INTO `social_links` (`id`, `facebook`, `twitter`, `instagram`, `linkedin`
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- Table structure for table `daniel_users`
 --
 
-CREATE TABLE `users` (
+CREATE TABLE `daniel_users` (
   `id` int(11) NOT NULL,
   `fname` varchar(100) NOT NULL,
   `lname` varchar(50) NOT NULL,
@@ -217,10 +217,10 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `users`
+-- Dumping data for table `daniel_users`
 --
 
-INSERT INTO `users` (`id`, `fname`, `lname`, `username`, `email`, `password`, `image`, `bio`, `role`, `date`) VALUES
+INSERT INTO `daniel_users` (`id`, `fname`, `lname`, `username`, `email`, `password`, `image`, `bio`, `role`, `date`) VALUES
 (5, 'Sabbir Hasan', ' Omor', 'sabbir', 'sabbir@gmail.com', '123456', '447574.jpg', '                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without                                                                                                                                                                                                                                                                                                                                                                                                                                        ', 2, '2020-08-12 09:15:51'),
 (6, 'Anisur Rahman', 'Shahin', 'admin', 'admin@tech.com', '123456', 'shahin-formal.png', 'Hello.I\'m Shahin.I\'m a tech enthusiast guy. Personally I’m Optimistic and always in hurry kinda person.I\'m a freelance web devoloper. I study CSE in South-East university.', 1, '2020-08-14 14:36:53'),
 (8, 'Asik Newaz', 'Sabbir', 'asik', 'asik@gmail.com', '123', '519127.jpg', 'The value of the cookie is automatically URLencoded when sending the cookie, and automatically decoded The value of the cookie is automatically URLencoded when sending the cookie, and automatically decoded                                                     ', 2, '2020-08-15 14:24:45'),
@@ -269,9 +269,9 @@ ALTER TABLE `social_links`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `users`
+-- Indexes for table `daniel_users`
 --
-ALTER TABLE `users`
+ALTER TABLE `daniel_users`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `username` (`username`),
   ADD UNIQUE KEY `email` (`email`);
@@ -317,9 +317,9 @@ ALTER TABLE `social_links`
   MODIFY `id` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `users`
+-- AUTO_INCREMENT for table `daniel_users`
 --
-ALTER TABLE `users`
+ALTER TABLE `daniel_users`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 COMMIT;
 

@@ -7,7 +7,7 @@ $pass = '';
 $dbname = 'cliqdatabase' ;
 $conn = new mysqli('localhost', $user, $pass, $dbname);
 
-$sql2 = "SELECT * FROM users ORDER BY id DESC LIMIT 3";
+$sql2 = "SELECT * FROM daniel_users ORDER BY id DESC LIMIT 3";
 
 class Database
 {

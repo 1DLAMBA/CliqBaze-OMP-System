@@ -16,7 +16,7 @@ if (isset($_SESSION['id']) or isset($_SESSION['username'])) {
 <?php
 include "header.php";
 
-$sql3 = "SELECT * FROM `users` WHERE username = '$uname'";
+$sql3 = "SELECT * FROM `daniel_users` WHERE username = '$uname'";
 $result3 = mysqli_query($conn, $sql3);
 $nrow = mysqli_fetch_assoc($result3);
 echo "<h1>Welcome, ".$nrow['name']."</h1>";
@@ -98,7 +98,7 @@ echo "<h1>Welcome, ".$nrow['name']."</h1>";
 <div class="w3-container city" style="display:none" id="Paris">
     <form action="" method="post" enctype="multipart/form-data">
         <?php
-        $sql = "SELECT * FROM `contents` WHERE username = '$uname'";
+        $sql = "SELECT * FROM `daniel_contents` WHERE username = '$uname'";
         $result = mysqli_query($conn, $sql);
 
         if (mysqli_num_rows($result) > 0) {
@@ -176,7 +176,7 @@ function opencity(cityName) {
             $filename2 = $ogdispho;
         }
 
-        $profilesql = "UPDATE users SET name = '$newname', email = '$newemail', phoneno = '$newphoneno', brand='$newbrand', pagedesc='$newpagedesc', filename='$filename2', pagecover='$filename'
+        $profilesql = "UPDATE daniel_users SET name = '$newname', email = '$newemail', phoneno = '$newphoneno', brand='$newbrand', pagedesc='$newpagedesc', filename='$filename2', pagecover='$filename'
                         WHERE username = '$uname'";
         $profileresult = mysqli_query($conn, $profilesql);
         if($profileresult){
@@ -199,7 +199,7 @@ function opencity(cityName) {
             $newprice = $newprices[$id];
             $newdesc = $newdescs[$id];
 
-            $sql2 = "UPDATE contents 
+            $sql2 = "UPDATE daniel_contents 
                      SET productname = '$newprodname', productprice = '$newprice', productdesc = '$newdesc' 
                      WHERE id = '$id' ";
             $result2 = mysqli_query($conn, $sql2);

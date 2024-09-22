@@ -50,14 +50,14 @@ if (isset($_POST['uname']) && isset($_POST['password'])
 
             $pass = md5($pass);
             
-            $sql = "SELECT * FROM users WHERE user_name= '$uname' ";
+            $sql = "SELECT * FROM daniel_users WHERE user_name= '$uname' ";
             $result = mysqli_query($conn, $sql);
 
             if (mysqli_num_rows($result) > 0) {
                 header("Location: BAS.php?error=The username is taken try another&$user_data");
                 exit();
             }else {
-                $sql2 = "INSERT INTO users(user_name, password, name, brand, filename, email) VALUES('$uname', '$pass', '$name', '$brand', '$filename', '$email')";
+                $sql2 = "INSERT INTO daniel_users(user_name, password, name, brand, filename, email) VALUES('$uname', '$pass', '$name', '$brand', '$filename', '$email')";
                 $result2 = mysqli_query($conn, $sql2);
                 if ($result2) {
                     header("Location: login.php?success=Your account has been created successfully");

@@ -20,7 +20,7 @@ if (isset($_POST['submit'])) {
         $hashed_password = md5($password);
 
         // Query database to check if user exists
-        $query = "SELECT * FROM users WHERE user_name='$username' AND password='$hashed_password'";
+        $query = "SELECT * FROM daniel_users WHERE user_name='$username' AND password='$hashed_password'";
         $result = mysqli_query($conn, $query);
 
         // Check if query was successful and if user exists

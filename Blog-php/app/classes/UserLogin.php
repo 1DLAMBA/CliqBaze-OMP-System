@@ -11,7 +11,7 @@ class UserLogin
     public static   function roleCheck($username,$pass){
         $username = $data['username'];
         $pass = $data['password'];
-        $sql = "SELECT * FROM `users` WHERE `username`='$username' AND `password` = '$pass' AND `role` == 0";
+        $sql = "SELECT * FROM `daniel_users` WHERE `username`='$username' AND `password` = '$pass' AND `role` == 0";
         $result = mysqli_query(Database::db(),$sql);
         if($result){
             return true;
@@ -26,7 +26,7 @@ class UserLogin
         $pass = $data['password'];
         $keep = '';
         $keep = isset($data['keep']) ? $data['keep'] : '';
-        $sql = "SELECT * FROM `users` WHERE `username`='$username' AND `password` = '$pass'";
+        $sql = "SELECT * FROM `daniel_users` WHERE `username`='$username' AND `password` = '$pass'";
         $result = mysqli_query(Database::db(),$sql);
         if($result){
             $row = mysqli_num_rows($result);
@@ -52,7 +52,7 @@ class UserLogin
         }
     }
     public static   function countActiveUser(){
-        $sql = "SELECT * FROM `users` WHERE role != 0";
+        $sql = "SELECT * FROM `daniel_users` WHERE role != 0";
         $result = mysqli_query(Database::db(),$sql);
         if($result){
             $count = mysqli_num_rows($result);
@@ -62,7 +62,7 @@ class UserLogin
         }
     }
     public  static  function loginUserData($username){
-        $sql = " SELECT * FROM `users` WHERE `username` = '$username' ";
+        $sql = " SELECT * FROM `daniel_users` WHERE `username` = '$username' ";
         $res = mysqli_query(Database::db(),$sql);
         if($res){
             $data = mysqli_fetch_assoc($res);
@@ -72,7 +72,7 @@ class UserLogin
         }
     }
     public  static  function doubleUser($usr){
-        $sql = "SELECT * FROM `users` WHERE `username` = '$usr'";
+        $sql = "SELECT * FROM `daniel_users` WHERE `username` = '$usr'";
         $result = mysqli_query(Database::db(),$sql);
         if($result){
             $count = mysqli_num_rows($result);
@@ -87,7 +87,7 @@ class UserLogin
 
     }
     public  static  function doubleEmail($email){
-        $sql = "SELECT * FROM `users` WHERE `email` = '$email'";
+        $sql = "SELECT * FROM `daniel_users` WHERE `email` = '$email'";
         $result = mysqli_query(Database::db(),$sql);
         if($result){
             $count = mysqli_num_rows($result);
@@ -127,7 +127,7 @@ class UserLogin
                     $err_txt = "Email exists!";
                     return $err_txt;
                 }else{
-                    $sql = "INSERT INTO `users`(`username`,`email`,`password`,`role`) VALUES ('$username','$email','$pass','$role')";
+                    $sql = "INSERT INTO `daniel_users`(`username`,`email`,`password`,`role`) VALUES ('$username','$email','$pass','$role')";
                     $result = mysqli_query(Database::db(),$sql);
                     if($result){
                         $suc_txt = "User added Successfully!";
@@ -149,7 +149,7 @@ class UserLogin
         $id = $data['id'];
 
         if($_FILES['image']['name'] == NULL){
-            $sql = "UPDATE `users` SET `fname` = '$fname',`lname`='$lname',`username` = '$username',`email`='$email',`bio`= '$bio' WHERE `id` = $id";
+            $sql = "UPDATE `daniel_users` SET `fname` = '$fname',`lname`='$lname',`username` = '$username',`email`='$email',`bio`= '$bio' WHERE `id` = $id";
         }else{
             $image = $_FILES['image']['name'];
             $img_ext = pathinfo($_FILES['image']['name'],PATHINFO_EXTENSION);
@@ -160,7 +160,7 @@ class UserLogin
                 header('location:editprofile.php');
                 return;
             }
-            $sql = "UPDATE `users` SET `fname` = '$fname',`lname`='$lname',`username` = '$username',`email`='$email',`image` = '$image',`bio`= '$bio' WHERE `id` = '$id'";
+            $sql = "UPDATE `daniel_users` SET `fname` = '$fname',`lname`='$lname',`username` = '$username',`email`='$email',`image` = '$image',`bio`= '$bio' WHERE `id` = '$id'";
             $upload = '../uploads/' . $image;
             move_uploaded_file($_FILES['image']['tmp_name'],$upload);
             $path=  $this->findSingleImage($id);
@@ -178,7 +178,7 @@ class UserLogin
 
     }
     public  static  function allUser(){
-        $sql = "SELECT * FROM `users` ORDER BY id DESC";
+        $sql = "SELECT * FROM `daniel_users` ORDER BY id DESC";
         $result = mysqli_query(Database::db(),$sql);
         if($result){
             return $result;
@@ -189,7 +189,7 @@ class UserLogin
 
     //Unblock
     public static   function userUnblock($id){
-        $sql = "UPDATE `users` SET `role` = '2' WHERE `users`.`id` = $id";
+        $sql = "UPDATE `daniel_users` SET `role` = '2' WHERE `daniel_users`.`id` = $id";
         $result = mysqli_query(Database::db(),$sql);
         if($result){
             return true;
@@ -199,7 +199,7 @@ class UserLogin
     }
     //Unblock
     public static   function userBlock($id){
-        $sql = "UPDATE `users` SET `role` = '0' WHERE `users`.`id` = $id";
+        $sql = "UPDATE `daniel_users` SET `role` = '0' WHERE `daniel_users`.`id` = $id";
         $result = mysqli_query(Database::db(),$sql);
         if($result){
             return true;
@@ -209,7 +209,7 @@ class UserLogin
     }
     //Unblock
     public  static  function makeAdmin($id){
-        $sql = "UPDATE `users` SET `role` = '1' WHERE `users`.`id` = $id";
+        $sql = "UPDATE `daniel_users` SET `role` = '1' WHERE `daniel_users`.`id` = $id";
         $result = mysqli_query(Database::db(),$sql);
         if($result){
             return true;
@@ -218,7 +218,7 @@ class UserLogin
         }
     }
     public static   function deleteUser($id){
-        $sql = "DELETE FROM `users` WHERE `id` = $id";
+        $sql = "DELETE FROM `daniel_users` WHERE `id` = $id";
         $res = mysqli_query(Database::db(),$sql);
         if($res){
             $dltTxt = "Successfully Delete!!";
@@ -236,7 +236,7 @@ class UserLogin
         }
     }
     public  static  function findSingleImage($id){
-        $sql = "SELECT `image` FROM `users` WHERE `id` = $id";
+        $sql = "SELECT `image` FROM `daniel_users` WHERE `id` = $id";
         $result = mysqli_query(Database::db(),$sql);
         if($result){
             if(mysqli_num_rows($result) == 0){

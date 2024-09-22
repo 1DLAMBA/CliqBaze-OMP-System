@@ -22,13 +22,13 @@ include "header.php";
     $offset = ($page - 1) * $limit;
 
     // Retrieve the total number of records
-    $totalRecords = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM contents"));
+    $totalRecords = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM daniel_contents"));
 
     // Calculate the total number of pages
     $totalPages = ceil($totalRecords / $limit);
 
     // Fetch the records for the current page
-    $sql1 = "SELECT * FROM contents ORDER BY id DESC LIMIT $limit OFFSET $offset";
+    $sql1 = "SELECT * FROM daniel_contents ORDER BY id DESC LIMIT $limit OFFSET $offset";
     $result1 = $conn->query($sql1);
 
     if (mysqli_num_rows($result1)) {

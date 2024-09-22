@@ -74,7 +74,7 @@ include "header.php";
             
       
         
-        $sql = "SELECT * FROM users WHERE username='$username'";
+        $sql = "SELECT * FROM daniel_users WHERE username='$username'";
         $result2 = mysqli_query($conn, $sql);
        
         $user_data = 'uname='. $username. '&name='. $name;
@@ -85,7 +85,7 @@ include "header.php";
 
             exit();
         } else {
-            $query    = "INSERT into `users` (name, username,  password, phoneno, email, create_datetime, filename, pagedesc, pagecover, brand)
+            $query    = "INSERT into `daniel_users` (name, username,  password, phoneno, email, create_datetime, filename, pagedesc, pagecover, brand)
                      VALUES ('$name', '$username', '" . md5($password) . "','$phone',  '$email', '$create_datetime', '$filename', '$desc', '$filename2', '$brand')";
          $result   = mysqli_query($conn, $query);
         if ($result) {

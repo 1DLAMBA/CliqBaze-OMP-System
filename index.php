@@ -10,6 +10,7 @@
 <?php
 $title = "HOME";
 include "header.php";
+require_once 'config.php';
 ?>
 
     <!-----***HOME***----->
@@ -84,7 +85,7 @@ include "header.php";
             <div class="brandivs">
                 <div class="brand1">
                     <?php
-                    $sql2 = "SELECT * FROM users 
+                    $sql2 = "SELECT * FROM daniel_users 
                             ORDER BY id 
                             DESC LIMIT 3";
   
@@ -94,7 +95,7 @@ include "header.php";
                             echo "<h1>" .$srow['brand']."</h1>";
                             if(mysqli_num_rows($result2)){
                                 $uname = $srow['username'];
-                                $sql = "SELECT * FROM contents WHERE username ='$uname' ORDER BY id DESC LIMIT 3";
+                                $sql = "SELECT * FROM daniel_contents WHERE username ='$uname' ORDER BY id DESC LIMIT 3";
                                 $result = $conn->query($sql);
                                 echo "";
                                 while($row = mysqli_fetch_assoc($result)){

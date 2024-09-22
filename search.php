@@ -19,7 +19,7 @@ $search = $_POST['search'];
 <div class='ome'>
 <?php
 if(isset($_POST['srchbtn'])){
-    $sql = "SELECT * FROM contents WHERE (`productname` LIKE '%".$search."%') ";
+    $sql = "SELECT * FROM daniel_contents WHERE (`productname` LIKE '%".$search."%') ";
     $result = mysqli_query($conn, $sql);
 
     if (mysqli_num_rows($result) > 0) {
@@ -67,7 +67,7 @@ if(isset($_POST['srchbtn'])){
         <div class="brandivs">
             <div class="brand1">
                 <?php
-                $sql2 = "SELECT * FROM users ORDER BY id DESC LIMIT 3";
+                $sql2 = "SELECT * FROM daniel_users ORDER BY id DESC LIMIT 3";
 
                  $result2 = $conn->query($sql2);
                  if (mysqli_num_rows($result2)){
@@ -75,7 +75,7 @@ if(isset($_POST['srchbtn'])){
                         echo "<h1>" .$srow['brand']."</h1>";
                         if(mysqli_num_rows($result2)){
                             $uname = $srow['username'];
-                            $sql = "SELECT * FROM contents WHERE username ='$uname' ORDER BY id DESC LIMIT 3";
+                            $sql = "SELECT * FROM daniel_contents WHERE username ='$uname' ORDER BY id DESC LIMIT 3";
                             $result = $conn->query($sql);
                             echo "";
                             while($row = mysqli_fetch_assoc($result)){

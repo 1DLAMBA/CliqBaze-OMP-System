@@ -30,7 +30,7 @@ include "header.php";
 <body >
 
 <?php
-$sql = "SELECT * FROM users WHERE username='$uname' ";
+$sql = "SELECT * FROM daniel_users WHERE username='$uname' ";
 
 $result = $conn->query($sql);
 
@@ -60,7 +60,7 @@ $row = mysqli_fetch_assoc($result);
     <h1>PRODUCTS</h1><br>
     <div class="Prod">
        <?php
-       $sql2 = "SELECT * FROM contents WHERE username='$uname'";
+       $sql2 = "SELECT * FROM daniel_contents WHERE username='$uname'";
        $result2 = $conn->query($sql2);  
 
 if (mysqli_num_rows($result2) > 0) {
