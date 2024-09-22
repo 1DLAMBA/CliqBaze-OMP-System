@@ -143,7 +143,10 @@
     padding: px;
 
 }
-
+.prodimg{
+    width: 150px;
+    height: 150px;
+}
 
 
 .Products h1{
@@ -151,8 +154,10 @@
 }
 
 .Products img{
-    width:200px;
-    padding: 1%;
+    width:100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 5%;
 }
 
 button{

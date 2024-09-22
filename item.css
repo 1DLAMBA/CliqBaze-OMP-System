@@ -4,6 +4,7 @@
 }
 .in-1{ 
     display: flex;
+    justify-content: space-between;
 }
 .in-1 img{
     width: 50%;

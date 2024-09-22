@@ -4,7 +4,8 @@ $user = 'root';
 $pass = '';
 $dbname = 'cliqdatabase';
 
-$conn = new mysqli('localhost', $user, $pass, $dbname);
+$conn = new mysqli("178.62.55.165", "vivushub_user1", "a@Xqt+xxy7W-", 
+"vivushub_web_user", "3306");
 
 if($conn === false) {
     die(" Connection Failed: ". mysqli_connect_error());
