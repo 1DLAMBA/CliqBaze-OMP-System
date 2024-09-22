@@ -1,0 +1,119 @@
+.row1 img{
+    width: 200px;
+}
+.SH{
+    background-image: linear-gradient(white, transparent);
+}
+.main{
+    background-color: rgb(255, 255, 255);
+    backdrop-filter: blur(5px);
+    max-width: 90%;
+    left: 50%;
+    transform: translate(5%, 0);
+    margin-top:0;
+    margin-bottom:5%;
+    padding-top: 9%;
+    padding-bottom: 5%;
+    align-items:start;
+
+}
+
+.row1{
+    
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    width: 100%;
+    
+
+   
+}
+
+
+
+.hold .pn{
+    font-size: 30px;
+    font-style: bold;
+}
+
+.hold img{
+    width: 300px;
+}
+.holdimg{
+    border:1px solid white;
+   height: 300px;
+
+}
+.hold button{
+    padding-top:10px;
+    padding-bottom:10px;
+    padding-left:25px;
+    padding-right: 25px;
+    background-color: rgb(255, 254, 254);
+    color: rgb(255, 0, 0);
+    border: 1px solid rgb(252, 0, 0) ;
+    font-size: 14px;
+    font-weight: 700;
+    border-radius: 5px;
+}
+.hold button:hover{
+    background-color: rgb(255, 0, 0);
+    color: rgb(255, 255, 255);
+    transition: 0.1s;
+}
+
+.btn{
+    padding-top:10px;
+    padding-bottom:10px;
+    padding-left:25px;
+    padding-right: 25px;
+    background-color: rgb(255, 254, 254);
+    color: rgb(255, 0, 0);
+    border: 1px solid rgb(255, 0, 0) ;
+    font-size: 14px;
+    border-radius: 5px;
+}
+
+@media only screen and (max-width: 768px){
+    .hold img{
+        width: 200px;
+    }
+    .hold{
+        margin-bottom: 5%;
+        padding-bottom: 2%;
+
+        border-bottom: 1px red solid;
+
+
+    }
+    .holdimg{
+        border:1px solid white;
+        width: auto;
+        height: auto;
+        margin: 1%;
+    
+    }
+}
+@media only screen and (min-width: 767px) {
+    .hold{
+        text-align: left;
+        margin: 1%;
+        border: 1px solid white;
+        padding: 1%;
+        width: 400px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        
+        }
+
+    
+}
+
+
+
+
+.row1-1{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+   
+}

@@ -1,0 +1,87 @@
+.inner{
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    
+    
+}
+
+
+
+input{
+    margin: 5px;
+    width: 300px;
+    padding-top: 10px;
+    padding-bottom:4px ;
+    border-radius: 2px;
+    border: 0px;
+    background-color: #ffffff86;
+    border-bottom: 1px solid #e56a6a;
+}
+
+.Personal-Info{
+   
+    padding: 4%;
+    justify-content: space-evenly;
+    display: flex;
+    flex-direction: row;
+    
+
+   
+}
+.reg{
+    padding: 2%;
+}
+
+.Bui-info img{
+    width: 200px;
+}
+
+button{
+    background-color: #e56a6a;
+    border: 1px solid ;
+    font-size: 17px;
+    color: white;
+    padding-top: 20px;
+    padding-bottom: 15px;
+    padding-left: 30px;
+    padding-right: 30px;
+    border-radius: 3px;
+}
+.main{
+    padding: 5%;
+    backdrop-filter: blur(10px);
+    border: 2px solid #fff;
+    margin: 2%;
+}
+
+.main hr{
+    height: 5px;
+    width:40%;
+    background-color: rgb(229, 106, 106);
+}
+
+.main a{
+    padding-top: 10px;
+    color: white;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: center;
+    background-color: transparent;
+    
+    border-bottom: 2px solid white;
+}
+
+
+
+@media only screen and (max-width: 768px){
+    input{
+        width: 250px;
+    }
+    .Personal-Info{
+        margin-bottom: 20px;
+        flex-direction: column;
+    }
+}

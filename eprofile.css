@@ -1,0 +1,168 @@
+.productsec{
+    background-color: rgba(246, 232, 232, 0.471);
+    backdrop-filter: blur(5px);
+    max-width: 90%;
+    left: 50%;
+    transform: translate(20%, 0);
+    margin-top:0;
+    margin-bottom:5%;
+    padding: 2%;
+    align-items:start;
+}
+
+.productin{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    width: 100%;
+}
+.textform{
+    display: flex;
+    flex-wrap: wrap ;
+}
+.textform input{
+    width: 100%;
+    padding: 5px;
+    border: 0px;
+    border-radius: 3px;
+    
+}
+.textform button{
+    background-color: red;
+    color: white;
+    border: 1px solid white;
+    padding-left: 50px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 50px;
+    margin:20px;
+}
+
+#textform{
+    width: 45%;
+    margin: 10px;
+}
+.buttons{
+    display: flex;
+    background-color: transparent;
+    justify-content: center;
+    padding: 0px;
+}
+.tapbtn{
+    color:white;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: transparent;
+    border: 0px;
+    font-size: 17px;
+    cursor: pointer;
+    border-left: 1px solid red;
+
+}
+
+    
+
+#profilebtn{
+    
+    background-color: rgba(255, 0, 0, 0.316);
+    color:black ;
+    margin: 0;
+    border: 0px;
+    border-radius:  10px 0px 0px;
+} 
+
+#productbtn{
+    background-color: rgba(255, 255, 255, 0.588);
+    color:black;
+    border: 1px solid red;
+    border-radius:  0px 10px 0px 0px;
+}
+
+#productbtn:active{
+    border: 3px solid red;
+    transition: 0.3s;
+
+}
+.dispho {
+    position: relative;
+    top: 100px;
+}
+
+.dispho img{
+    width: 100px;
+    position: relative;
+    border-radius: 100px;
+}
+
+.cover{
+    width: 100%;
+    height: 300px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+    
+}
+
+.CaseCover{
+    width:100%;
+    height: 300px;
+    background-color: rgba(0, 0, 0, 0.705);
+}
+
+.cover .case{
+    background-color: rgba(255, 255, 255, 0.548);
+    border-radius: 10px;
+    padding: 0px;
+    position: absolute;
+    color: rgb(0, 0, 0);
+    top: 250px;
+    right:50px;
+    transform: translate(10%, 0);
+}
+
+#London {
+    background-color: rgba(255, 0, 0, 0.316);
+    border-radius: 10px;
+    color: white;
+    width:70%;
+    left: 10px;
+    transform: translate(20%, 0);
+    padding: 0px;
+}
+
+#Paris{
+    background-color: rgba(255, 255, 255, 0.588);
+    border-radius: 10px;
+    color: rgb(5, 5, 5);
+    width:70%;
+    left: 10px;
+    transform: translate(20%, 0);
+    padding: 20px;
+}
+
+#Paris img {
+    width: 200px;
+}
+
+
+
+@media only screen and (max-width: 768px){
+    #London{
+        width: 100%;
+        padding: 0px;
+        left: 0px;
+    transform: translate(0%, 0);
+    }
+    #Paris{
+        width: 100%;
+        left: 0px;
+    transform: translate(0%, 0);
+    }
+    #textform{
+        width: 100%;
+        max-width: 300px;
+        margin: 10px;
+    }
+}
